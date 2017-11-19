@@ -1,0 +1,28 @@
+extends layout.pug
+
+prepend head
+  - var pagetitle = 'Read'
+
+append body
+  script(type="text/javascript", src="scripts/append.js")
+
+block content
+  main(role="main")
+    section#comments
+      h2 Read Something
+      select(id="sortbtn" name="com_sort")
+          option(value="desc" selected"") Newest First
+          option(value="asc") Oldest First
+      if output[0]
+        each entry in output
+          div.com_wrap.wrapper(alt=entry.id)
+            div.com_info
+              img(src="images/"+entry.avatar+".png" alt=entry.avatar width="100%")
+            div.com_body
+              h3= entry.title
+              h4= entry.name
+              p= entry.body
+      else
+       p.wrapper Unfortunately no one has bothered to comment yet. (That or the server is unavailable)
+    section
+      button.wrapper(id="loadcomments") Load More Comments

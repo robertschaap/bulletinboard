@@ -1,0 +1,10 @@
+extends layout.pug
+
+prepend head
+  - var pagetitle = 'Error'
+
+block content
+  main(role="main")
+    section.wrapper
+      h2 Error #{error.status}
+      pre= error.stack

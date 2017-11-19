@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+
+  head
+    block head
+      meta(charset="utf-8")
+      meta(name="author" content="Robert Schaap")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      title Bulletin Board: #{pagetitle}
+      link(href="css/normalize.css", rel="stylesheet", type="text/css")
+      link(href="css/stylesheet.css", rel="stylesheet", type="text/css")
+      link(rel="appl-touch-icon" href="images/appl-touch-icon.png")
+      link(rel="icon" type="image/png" href="images/favicon.png" sizes="32x32")
+
+  body
+    block body
+      header(role="heading")
+        div.wrapper
+          h1 Bulletin Board
+          nav(role="navigation")
+            a(href='/writesomething') Write
+            a(href='/readsomething') Read
+
+      block content
+
+      footer(role="contentinfo")
+        div.wrapper
+          p Robert Schaap 2017
+      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+      script(type="text/javascript", src="scripts/javascript.js")

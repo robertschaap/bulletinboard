@@ -1,0 +1,26 @@
+extends layout.pug
+
+prepend head
+  - var pagetitle = 'Write'
+
+block content
+  main(role="main")
+    section#commentform
+      h2 Write Something
+      form#postcomment.wrapper(action="/postcomment", method="post")
+        label What's your name?:
+        input(type="text", name="com_name")
+        label Write a title (max 100 char):
+        input(type="text", name="com_title")
+        label Share your message:
+        textarea(type="text", name="com_body")
+        label Select an avatar:
+        select(name="com_avatar")
+          option(value="bunny") A cute bunny
+          option(value="elephant") A fierce elephant
+          option(value="hippo") A loud hippo
+          option(value="hyena") A laughing hyena
+          option(value="kitty") A rofl-ing kitty
+          option(value="puppy") A bashful puppy
+          option(value="sheep") The master race
+        button(type="submit") Submit
