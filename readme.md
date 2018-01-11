@@ -2,7 +2,8 @@
 A simple bulletin board where you can leave a message and which is populated dynamically from a database with pagination.
 
 ##### Technologies
-HTML5 | CSS3 | JavasScript | Node.js | Express | Pug | PostgreSQL | Sequelize
+HTML5 | CSS3 | JavasScript | Node.js | Express     
+Pug | PostgreSQL | Sequelize
 
 ### Scope
 ##### What was designed to do

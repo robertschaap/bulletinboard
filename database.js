@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('bulletinboard', process.env.POSTGRES_USER, null, {
   host: 'localhost',
-  dialect: 'postgres'
+  dialect: 'postgres',
+  logging: false
 });
 
 const Posts = sequelize.define('posts', {
