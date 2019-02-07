@@ -15,6 +15,7 @@ app.listen(myport, () => console.log(`Now listening on port ${myport}`));
 app.get('/', (req, res) => {
     res.redirect('/readsomething?sort=desc');
 });
+
 app.get('/readsomething', (req, res) => {
     database.retrieveRecords(0, req.query.sort ? req.query.sort : 'desc')
     .then( output => res.render('read', { output: output }) )
