@@ -5,7 +5,6 @@ const database = require('./database.js');
 const app = express();
 const myport = 3000;
 
-// Set Use Listen
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
