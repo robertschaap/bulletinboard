@@ -19,16 +19,17 @@ function getComments() {
         let array = res.output;
         for (let i = 0 ; i < array.length; i++) {
             let comment = `
-            <div class="com_wrap wrapper" alt="${array[i].id}">
-                <div class="com_info">
-                    <img src="images/${array[i].avatar}.png" alt="${array[i].avatar}" width="100%">
+                <div class="com_wrap wrapper" alt="${array[i].id}">
+                    <div class="com_info">
+                        <img src="images/${array[i].avatar}.png" alt="${array[i].avatar}" width="100%">
+                    </div>
+                    <div class="com_body">
+                        <h3>${array[i].title}</h3>
+                        <h4>${array[i].name}</h4>
+                        <p>${array[i].body}</p>
+                    </div>
                 </div>
-                <div class="com_body">
-                    <h3>${array[i].title}</h3>
-                    <h4>${array[i].name}</h4>
-                    <p>${array[i].body}</p>
-                </div>
-            </div>`;
+            `;
             $('#comments').append(comment);
         }
     });
