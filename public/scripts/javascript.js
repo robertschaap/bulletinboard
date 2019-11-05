@@ -39,9 +39,9 @@ $('#loadcomments').click(function(){
     getComments();
 });
 
-$('#sortbtn').change(function(e) {
+$('#sortbtn').change(function() {
     $('#comments div').remove();
     recordOffset = 0;
-    pageSort = $(this).val()
+    pageSort = $(this).val();
     getComments();
 });
