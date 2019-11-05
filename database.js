@@ -16,7 +16,7 @@ const Posts = sequelize.define('posts', {
 
 //Functions
 function makeMap(obj) {
-    return obj.map(i => i.dataValues)
+    return obj.map(i => i.dataValues);
 }
 
 exports.retrieveRecords = (offset, sort) => {
@@ -24,8 +24,8 @@ exports.retrieveRecords = (offset, sort) => {
         order: [['id', sort]],
         limit: 4,
         offset: offset}
-    ).then(makeMap)
-}
+    ).then(makeMap);
+};
 
 exports.insertRecords = (req) => {
     let parameters = [ req.body.com_title, req.body.com_body, req.body.com_avatar, req.body.com_name ];
@@ -35,10 +35,10 @@ exports.insertRecords = (req) => {
         avatar: parameters[2],
         name: parameters[3]
     });
-}
+};
 
 // Synchronisation
-sequelize.sync({ force: true}).then(() => {
+sequelize.sync({ force: true }).then(() => {
     Posts.create({ title: `Hello World!`, body: `Hi there, welcome to our little place, feel free to leave a comment!`, avatar: `sheep`, name: `Robert`});
     Posts.create({ title: `This is amazing!`, body: `I just stumbled upon this place, it's amazing. Keep up the good work!`, avatar: `elephant`, name: `Max`});
     Posts.create({ title: `What's this about though?`, body: `You seem like nice people but what's this about?`, avatar: `kitty`, name: `Dave`});
